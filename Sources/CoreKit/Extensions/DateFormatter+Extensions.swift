@@ -114,16 +114,24 @@ public extension Date {
 // MARK: - JSONDecoder PocketBase Strategy
 
 public extension JSONDecoder {
-    func pocketbaseDateDecodingStrategy() -> (_ decoder: any Decoder) throws -> Date {
-        { decoder in
-            let container = try decoder.singleValueContainer()
-            let dateString = try container.decode(String.self)
+    /// Returns a `@Sendable` closure that decodes PocketBase-formatted date strings.
+    /// The returned closure captures no mutable state and is safe to hand to
+    /// `JSONDecoder.DateDecodingStrategy.custom(_:)` under Swift 6 strict concurrency.
+    func pocketbaseDateDecodingStrategy() -> @Sendable (_ decoder: any Decoder) throws -> Date {
+        pocketbaseDateDecoder
+    }
+}
 
-            if let date = DateFormatter.pocketbase.date(from: dateString) {
-                return date
-            } else {
-                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
-            }
-        }
+/// Top-level `@Sendable` PocketBase date decoder. Lives at file scope so it never
+/// captures non-Sendable context when referenced from `.custom(...)` strategies.
+@Sendable
+public func pocketbaseDateDecoder(_ decoder: any Decoder) throws -> Date {
+    let container = try decoder.singleValueContainer()
+    let dateString = try container.decode(String.self)
+
+    if let date = DateFormatter.pocketbase.date(from: dateString) {
+        return date
+    } else {
+        throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
     }
 }
