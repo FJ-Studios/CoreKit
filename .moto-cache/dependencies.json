@@ -1,0 +1,15 @@
+{
+  "CoreKit" : [
+    "Combine",
+    "Foundation",
+    "Network",
+    "SwiftUI",
+    "os"
+  ],
+  "CoreKitTests" : [
+    "XCTest"
+  ],
+  "unknown" : [
+    "PackageDescription"
+  ]
+}

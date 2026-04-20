@@ -1,0 +1,34 @@
+{
+  "modules" : [
+    {
+      "name" : "CoreKit",
+      "public_functions" : [
+
+      ],
+      "public_protocols" : [
+        "CacheRepositoryProtocol",
+        "DIAssembly",
+        "RegistrationProtocol",
+        "Resolver"
+      ],
+      "public_types" : [
+        "AppIdentity",
+        "AppLog",
+        "CacheRepository",
+        "CacheRepositoryError",
+        "ContainerError",
+        "DI",
+        "DIEnvironment",
+        "DebugAddress",
+        "InterfaceType",
+        "InvalidateTime",
+        "NetworkStatus",
+        "RegistrationScope",
+        "Resolve",
+        "ResolveOptional",
+        "ResolveWeak",
+        "VersionComparator"
+      ]
+    }
+  ]
+}
