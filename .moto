@@ -5,15 +5,11 @@
 name = "CoreKit"
 description = "Foundation: DI, Coordinator, AppLog, Extensions"
 language = "swift"
-build_system = "spm"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/obyw-one/CoreKit"
 
-[architecture]
-modules = ["CoreKit"]
-
 [cache]
-commit = "0b251cf72"
+commit = "33757826"
 schema = "1"
 branches = ["main", "develop"]
 

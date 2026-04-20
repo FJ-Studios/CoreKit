@@ -1,0 +1,30 @@
+{
+  "dependencies" : [
+
+  ],
+  "name" : "CoreKit",
+  "platforms" : [
+    "iOS 17",
+    "macOS 14"
+  ],
+  "targets" : [
+    {
+      "dependencies" : [
+        "CoreKit"
+      ],
+      "name" : "CoreKitTests",
+      "path" : "Tests\/CoreKitTests",
+      "sourceFiles" : 3,
+      "type" : "test"
+    },
+    {
+      "dependencies" : [
+
+      ],
+      "name" : "CoreKit",
+      "path" : "Sources\/CoreKit",
+      "sourceFiles" : 17,
+      "type" : "library"
+    }
+  ]
+}

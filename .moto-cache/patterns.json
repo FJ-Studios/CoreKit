@@ -1,0 +1,11 @@
+[
+  {
+    "description" : "Typed error enums conforming to Error\/LocalizedError",
+    "example" : "enum CacheRepositoryError: Error, Sendable {\n    case cannotCreateCache\n    case notFound\n    case noCacheAvailable\n    case encodedError\n    case decodedError\n    case deleteError\n    case invalidateCache\n}",
+    "files" : [
+      "Sources\/CoreKit\/Cache\/CacheRepository.swift",
+      "Sources\/CoreKit\/DI\/Container.swift"
+    ],
+    "name" : "error_pattern"
+  }
+]
