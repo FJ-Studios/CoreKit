@@ -120,7 +120,7 @@ extension Coordinator {
 // MARK: - Base implementation for `any Coordinator`
 
 @MainActor
-open class BaseCoordinator<U: Hashable, P: View>: @MainActor Coordinator {
+open class BaseCoordinator<U: Hashable, P: View>: Coordinator {
 
     public typealias UserAction = U
     public typealias Presenter = P
@@ -204,5 +204,5 @@ open class BaseCoordinator<U: Hashable, P: View>: @MainActor Coordinator {
 
     // MARK: - Equatable Conformance
 
-    public static func ==(lhs: BaseCoordinator<U, P>, rhs: BaseCoordinator<U, P>) -> Bool { lhs.id == rhs.id }
+    nonisolated public static func ==(lhs: BaseCoordinator<U, P>, rhs: BaseCoordinator<U, P>) -> Bool { lhs.id == rhs.id }
 }
