@@ -46,7 +46,7 @@ import UIKit
 /// `Tab(_:systemImage:value:)` initializer. `symbolImage` must be a valid SF
 /// Symbol name — the `AnimatedTabView` matches it against the underlying
 /// `UITabBar`'s `UIImageView` descriptions to find the icon to animate.
-public protocol AnimatedTabSelectionProtocol: CaseIterable, Hashable {
+public protocol AnimatedTabSelectionProtocol: CaseIterable, Hashable, Sendable {
     var title: String { get }
     var symbolImage: String { get }
 }
